@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Run Automation</title>
+</head>
+<body>
+
+<h2>Start Email Automation</h2>
+
+<button onclick="runWorkflow()">Click to Start</button>
+
+<script>
+function runWorkflow() {
+  fetch("https://manmeet-234.app.n8n.cloud/webhook/c8f77065-e3ef-478f-861d-fe11760db9d6")
+    .then(response => response.json())
+    .then(data => {
+      alert("Workflow Triggered Successfully!");
+      console.log(data);
+    })
+    .catch(error => {
+      alert("Error triggering workflow");
+      console.error(error);
+    });
+}
+</script>
+
+</body>
+</html>
